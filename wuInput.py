@@ -1,5 +1,4 @@
 #Weather input
-
 import wuApi
 
 def getCity():
@@ -16,14 +15,10 @@ def getPhone():
         phone = input('Enter phone number: ')
     return phone
 
-
-
-
 if __name__ == "__main__":
     city = getCity()
     state = getState()
     #phone = getPhone()
-
     url = wuApi.build_url(city,state)
     #url = wuApi.build_url('carlsbad','ca')
     json = wuApi.get_result(url)
@@ -33,7 +28,6 @@ if __name__ == "__main__":
         print(date)
         print(weatherDict[date])
         print()
-    
     #print(json)
 
     
