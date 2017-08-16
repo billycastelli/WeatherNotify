@@ -1,12 +1,14 @@
-#Weather api
+#Weather information provided by Wunderground 
+#https://www.wunderground.com/weather/api/d/docs
+
 import wuInput
 import json
 import urllib.parse
 import urllib.request
 
+API_KEY = <'insert API key'>
 BASE_URL = 'http://api.wunderground.com/api/'
 FORECAST_URL = BASE_URL + API_KEY + '/forecast10day/q/'
-
 
 def build_url(city:str,state:str)->str:
     '''takes in a list of locations and returns the string url...url has json map info'''
@@ -25,7 +27,6 @@ def get_result(url: str)->dict:
     finally:
         if response != None:
             response.close()
-
 
 def parse(json: dict):
     rWeather = {}
