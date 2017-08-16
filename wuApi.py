@@ -4,7 +4,6 @@ import json
 import urllib.parse
 import urllib.request
 
-API_KEY = '8601f54b1a46fce9'
 BASE_URL = 'http://api.wunderground.com/api/'
 FORECAST_URL = BASE_URL + API_KEY + '/forecast10day/q/'
 
