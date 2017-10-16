@@ -3,8 +3,8 @@
 from twilio.rest import Client
 
 # Find these values at https://twilio.com/user/account
-account_sid = "ACd1621b1159184a8fa76c82d767cb3882"
-auth_token = "e7b71696eddd3d22a66d98c3e7b744fd"
+account_sid = "xxxxxxx" #personal key removed from github for privacy
+auth_token = "xxxxxx"
 
 client = Client(account_sid, auth_token)
 
