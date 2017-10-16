@@ -14,6 +14,3 @@ def send(toNum: str, fromNum: str, message:str):
     client.api.account.messages.create(to = toNum,
                                        from_ = fromNum,
                                        body = message)
-
-
-
