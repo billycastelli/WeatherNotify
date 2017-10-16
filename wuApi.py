@@ -1,14 +1,13 @@
-#Weather information provided by Wunderground 
-#https://www.wunderground.com/weather/api/d/docs
-
+#Weather api
 import wuInput
 import json
 import urllib.parse
 import urllib.request
 
-API_KEY = <'insert API key'>
+API_KEY = '8601f54b1a46fce9'
 BASE_URL = 'http://api.wunderground.com/api/'
 FORECAST_URL = BASE_URL + API_KEY + '/forecast10day/q/'
+
 
 def build_url(city:str,state:str)->str:
     '''takes in a list of locations and returns the string url...url has json map info'''
@@ -28,6 +27,7 @@ def get_result(url: str)->dict:
         if response != None:
             response.close()
 
+
 def parse(json: dict):
     rWeather = {}
     allWeather = {}
@@ -36,12 +36,14 @@ def parse(json: dict):
         split_date = extended_date.split()
         date = ' '.join(split_date[-3:])
         conditions = json["forecast"]["simpleforecast"]["forecastday"][x]["conditions"]
+        high = json["forecast"]["simpleforecast"]["forecastday"][x]["high"]["fahrenheit"]
+        low = json["forecast"]["simpleforecast"]["forecastday"][x]["low"]["fahrenheit"]
         #print(date)
         #print(conditions)
-        #print()
+        print()
         if 'thunder' in conditions.lower():
-            weather[date] = conditions
-        allWeather[date] = conditions
+            rWeather[date] = [conditions,high,low]
+        allWeather[date] = [conditions, high, low]
     #return rWeather
     return allWeather
         
