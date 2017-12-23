@@ -23,7 +23,7 @@ if __name__ == "__main__":
     city = getCity()
     state = getState()
     phone = getPhone()
-    twNum = '+18589265834'
+    twNum = '+17609744094'
 
     url = wuApi.build_url(city,state)
     print(url)
