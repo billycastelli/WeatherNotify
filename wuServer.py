@@ -32,5 +32,5 @@ def job():
 
 if __name__ == "__main__":
     scheduler = BlockingScheduler()
-    scheduler.add_job(job, 'cron', hour = 15, minute = 52)
+    scheduler.add_job(job, 'cron', hour = 08, minute = 00)
     scheduler.start()
